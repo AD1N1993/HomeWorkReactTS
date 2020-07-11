@@ -1,7 +1,9 @@
-import './App.css';
+import './App.scss';
 import React, {useState} from "react";
 import Message from "./components/Message/Message";
 import {Todolist} from "./components/Todolist/TodoList";
+import HelloInput from "./components/HelloInput/HelloInput";
+import {v1} from "uuid";
 
 
 export type TasksType = {
@@ -10,38 +12,59 @@ export type TasksType = {
     priority: string
     isDone: boolean
 }
+type FilterType = "All" | "High" | "Middle" | "Low";
 
-type FilterType = "All"| "High" | "Middle" | "Low";
+export type HelloUsersType = {
+    id: string
+    name: string
+}
 function App() {
     let [tasks, setTasks] = useState<Array<TasksType>>(
         [
-            {id:1,titleTask:"Work", priority:"High",isDone: true},
-            {id:2,titleTask:"Study", priority:"High",isDone: false},
-            {id:3,titleTask:"Rest", priority:"Middle",isDone: true},
-            {id:4,titleTask:"Movies", priority:"Low",isDone: false},
+            {id: 1, titleTask: "Work", priority: "High", isDone: true},
+            {id: 2, titleTask: "Study", priority: "High", isDone: false},
+            {id: 3, titleTask: "Rest", priority: "Middle", isDone: true},
+            {id: 4, titleTask: "Movies", priority: "Low", isDone: false},
         ]
     );
     let [filter, setFilter] = useState<FilterType>("All")
 
-function removeTask(taskId: number) {
-        tasks = tasks.filter((t:TasksType) => t.id !== taskId)
+    let [inputState, setInput] = useState("");
+
+    let [usersHello, setUsersHello] = useState<Array<HelloUsersType>>([
+
+    ]);
+
+    function removeTask(taskId: number) {
+        tasks = tasks.filter((t: TasksType) => t.id !== taskId)
         setTasks(tasks);
-}
+    }
 
-function changeFilter (value:"All"| "High" | "Middle" | "Low") {
-       setFilter(value)
-}
+    function changeFilter(value: "All" | "High" | "Middle" | "Low") {
+        setFilter(value)
+    }
 
-let tasksForTodolist = tasks;
-if(filter === "High"){
-    tasksForTodolist = tasks.filter((t) => t.priority === "High");
-}
-if(filter === "Middle"){
-    tasksForTodolist = tasks.filter((t) => t.priority === "Middle");
-}
-if(filter === "Low"){
-    tasksForTodolist = tasks.filter((t) => t.priority === "Low");
-}
+    function enterName(name: string) {
+        setInput(name);
+    }
+
+    function changeQuantityUsers(userName:string) {
+        let newUser:HelloUsersType = {id:v1(), name: userName};
+        let newUsers = [newUser, ...usersHello]
+        setUsersHello(newUsers)
+
+    }
+
+    let tasksForTodolist = tasks;
+    if (filter === "High") {
+        tasksForTodolist = tasks.filter((t) => t.priority === "High");
+    }
+    if (filter === "Middle") {
+        tasksForTodolist = tasks.filter((t) => t.priority === "Middle");
+    }
+    if (filter === "Low") {
+        tasksForTodolist = tasks.filter((t) => t.priority === "Low");
+    }
 
     return (
         <div className="App">
@@ -53,11 +76,17 @@ if(filter === "Low"){
                      minutes={0}
             />
             <h2>Home Task 2</h2>
-            <Todolist title={"To-do list №1"}
-                      tasks = {tasksForTodolist}
-                      removeTask = {removeTask}
-                      changeFilter = {changeFilter}
+            <Todolist title={"To-do list"}
+                      tasks={tasksForTodolist}
+                      removeTask={removeTask}
+                      changeFilter={changeFilter}
 
+            />
+            <h2>Home Task 3</h2>
+            <HelloInput inputState={inputState}
+                        changeInputName={enterName}
+                        quantityUsers={usersHello}
+                        changeQuantity={changeQuantityUsers}
             />
         </div>
     );
