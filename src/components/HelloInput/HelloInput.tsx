@@ -1,5 +1,7 @@
 import React, {ChangeEvent, KeyboardEvent} from "react";
 import {HelloUsersType} from "../../App";
+import {Button} from "../../common/Button/Button";
+import {InputText} from "../../common/InputText/InputText";
 
 type InputNameProps = {
     inputState: string
@@ -10,9 +12,11 @@ type InputNameProps = {
 
 function HelloInput(props:InputNameProps) {
 
- function changeInputValue(e: ChangeEvent<HTMLInputElement>) {
-    props.changeInputName(e.currentTarget.value)
- }
+
+    const onChange = (inputValue: string) => {
+        props.changeInputName(inputValue)
+    };
+
 
  function HelloUser() {
       if(props.inputState !==""){
@@ -32,15 +36,9 @@ function HelloInput(props:InputNameProps) {
 
     return (
         <>
-            <input
-                type="text"
-                value={props.inputState}
-                onChange={changeInputValue}
-                onKeyPress={sendKeyPressEnter}
-            />
-            <button className={'btn'} onClick={HelloUser}>
-                Hello
-            </button>
+
+            <InputText value={props.inputState} onChange={onChange} actionEnter={ HelloUser}/>
+            <Button value={"Hello"} action={HelloUser}/>
 
             <div>Quantity Users: <b>{props.quantityUsers.length}</b></div>
 
