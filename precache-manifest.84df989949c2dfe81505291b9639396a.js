@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0a5b59c73ed7e47031f0107676540a30",
+    "revision": "b8d8c121498eddf7bc9ccb67dcebf22e",
     "url": "/HomeWorkReactTS/index.html"
   },
   {
