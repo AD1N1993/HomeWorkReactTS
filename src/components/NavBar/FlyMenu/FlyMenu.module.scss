@@ -1,5 +1,5 @@
 .flyMenu{
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
@@ -31,5 +31,23 @@
 }
 
 .show{
-  transform: translateX(0);
+  transform: translateX(0) !important;
+}
+.activeLink{
+  color: rgba(255, 0, 119, 0.84);
+}
+.outside{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 80%;
+  overflow: auto;
+  background-color: transparent;
+  opacity: 0.7;
+  transform: translateX(-140%);
+  transition: all 0.5s;
+}
+.wrapper{
+
 }

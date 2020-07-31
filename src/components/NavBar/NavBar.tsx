@@ -14,7 +14,7 @@ export function NavBar() {
     return (
         <>
             <Burger active={active} onClick={onClickChangeState}/>
-            <FlyMenu status={active}/>
+            <FlyMenu status={active} onClickHide={onClickChangeState}/>
         </>
     );
 }

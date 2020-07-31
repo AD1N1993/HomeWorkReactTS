@@ -6,6 +6,8 @@ import HelloInput from "../../components/HelloInput/HelloInput";
 import {SchowRoom} from "../../components/ShowRoom/ShowRoom";
 import Message from "../../components/Message/Message";
 import s from "./PreJunior.module.scss";
+import {EditAbleSpan} from "../../components/EditAbleSpan/EditAbleSpan";
+import {EditAbleSpanLC} from "../../components/EditAbleSpanLC/EditAbleSpan";
 
 export type TasksType = {
     id: number
@@ -80,6 +82,7 @@ export function PreJunior() {
         tasksForTodolist = tasks.filter((t) => t.priority === "Low");
     }
 
+
     return (
 
         <>
@@ -108,6 +111,8 @@ export function PreJunior() {
             />
             <h2>Home Task 4</h2>
             <SchowRoom/>
+
+
 
         </>
     );

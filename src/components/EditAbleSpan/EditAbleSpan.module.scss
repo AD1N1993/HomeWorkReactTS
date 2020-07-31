@@ -1,0 +1,22 @@
+.input {
+  max-width: 320px;
+  font-size: 20px;
+  border: none;
+  text-align: center;
+  border-bottom: 1px solid red ;
+  &:focus {
+    outline: none;
+    font-size: 20px;
+  }
+}
+
+.span {
+  max-width: 320px;
+  font-size: 20px;
+  white-space: pre-wrap;
+  padding: 5px;
+}
+
+.wrapper{
+
+}
