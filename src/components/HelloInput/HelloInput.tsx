@@ -1,7 +1,9 @@
 import React, {ChangeEvent, KeyboardEvent} from "react";
-import {HelloUsersType} from "../../App";
 import {Button} from "../../common/Button/Button";
 import {InputText} from "../../common/InputText/InputText";
+import {HelloUsersType} from "../../Pages/Prejunior/PreJunior";
+
+
 
 type InputNameProps = {
     inputState: string

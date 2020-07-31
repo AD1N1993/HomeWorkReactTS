@@ -8,6 +8,7 @@ type inputCheckboxTypeProps = {
     id?:number}
 
 export const InputCheckBox = (props:inputCheckboxTypeProps) => {
+
     const changeStatus = (e:ChangeEvent<HTMLInputElement>) => {
         let id = props.id || +e.currentTarget.id;
        props.changeStatus(e.currentTarget.checked,id);

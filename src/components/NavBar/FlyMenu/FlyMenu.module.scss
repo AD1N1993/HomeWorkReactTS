@@ -1,0 +1,35 @@
+.flyMenu{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 20%;
+  overflow: auto;
+  background-color: #181717;
+  opacity: 0.7;
+  transform: translateX(-100%);
+  transition: all 0.5s;
+}
+.flyMenuList{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50%;
+  color: #ffffff;
+  list-style: none;
+}
+.flyMenuLink{
+   text-decoration: none;
+  color: white;
+}
+.flyMenuItem{
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 20px;
+
+}
+
+.show{
+  transform: translateX(0);
+}

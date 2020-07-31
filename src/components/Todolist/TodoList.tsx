@@ -1,7 +1,8 @@
 import React, {ChangeEvent} from "react";
-import {TasksType} from "../../App";
 import {Button} from "../../common/Button/Button";
 import {InputCheckBox} from "../../common/InputCheckbox/InputCheckbox";
+import {TasksType} from "../../Pages/Prejunior/PreJunior";
+
 
 type TodolistPropsType = {
     title: string
