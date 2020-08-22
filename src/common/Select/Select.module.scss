@@ -10,6 +10,7 @@
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
+  outline: none;
   &:after{
     position: absolute;
     top :30%;
@@ -29,10 +30,13 @@
   border: 1px solid #a2b1b0;
   border-top: none;
   border-radius: 0 0 8px 8px;
+  background-color: #ffffff;
   padding-top: 5px;
-  top: 91%;
-  left: 0;
-  right: 0;
+  ttop: 83%;
+  left: -1px;
+  right: -1px;
+  z-index: 3;
+
 }
 //.option:hover{
 //  background-color: #00a700;
