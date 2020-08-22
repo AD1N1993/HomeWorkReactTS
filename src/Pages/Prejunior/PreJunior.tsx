@@ -6,8 +6,6 @@ import HelloInput from "../../components/HelloInput/HelloInput";
 import {SchowRoom} from "../../components/ShowRoom/ShowRoom";
 import Message from "../../components/Message/Message";
 import s from "./PreJunior.module.scss";
-import {EditAbleSpan} from "../../components/EditAbleSpan/EditAbleSpan";
-import {EditAbleSpanLC} from "../../components/EditAbleSpanLC/EditAbleSpan";
 
 export type TasksType = {
     id: number
