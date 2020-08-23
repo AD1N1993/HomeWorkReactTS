@@ -19,14 +19,17 @@
     background-color: #a2b1b0;
 
   }
+  &:hover{
+    border-bottom: 1px solid gray;
+  }
 
 }
 
 .active {
   &::after {
     position: absolute;
-    top: 15%;
-    left: -20px;
+    top: 10%;
+    left: -19px;
     content: "";
     width: 5px;
     height: 10px;

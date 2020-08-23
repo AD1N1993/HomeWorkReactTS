@@ -3,7 +3,6 @@
 
 .selectTitle {
   position: relative;
-  padding: 5px;
   border: 1px solid #a2b1b0;
   width: 297px;
   border-radius: 8px;
@@ -11,6 +10,8 @@
   font-size: 16px;
   font-weight: 600;
   outline: none;
+  height: 33.33px;
+  line-height: 33.33px;
   &:after{
     position: absolute;
     top :30%;
@@ -32,7 +33,7 @@
   border-radius: 0 0 8px 8px;
   background-color: #ffffff;
   padding-top: 5px;
-  ttop: 83%;
+  top: 83%;
   left: -1px;
   right: -1px;
   z-index: 3;

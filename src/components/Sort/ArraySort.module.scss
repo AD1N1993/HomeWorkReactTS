@@ -1,0 +1,34 @@
+.wrapper{
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0 100px 0;
+}
+
+.table{
+  width: 500px;
+  flex: 1 1;
+  border-collapse: collapse;
+
+}
+
+
+.title{
+  font-size: 22px;
+  font-style: italic;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.subTitle{
+  background-color: #4283f5;
+}
+
+.dataRow:nth-child(odd){
+  background-color: #00ffff;
+}
+.dataRow:nth-child(even){
+  background-color: #6aff00;
+}

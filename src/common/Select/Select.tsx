@@ -1,11 +1,22 @@
 import React, {MouseEvent, KeyboardEvent, useState} from "react";
 import s from "./Select.module.scss"
+import {v1} from "uuid";
 
 type SelectTypeProps = {
     options: Array<string>
     value: string
     onChange: (option: string) => void
 }
+var items = [
+    {id:v1(), name:"Alex", age: 32},
+    {id:v1(), name:"Viktor", age: 16},
+    {id:v1(), name:"Den", age: 25},
+    {id:v1(), name:"Bork", age: 17},
+    {id:v1(), name:"Igor", age: 52},
+    {id:v1(), name:"Helen", age: 12},
+    {id:v1(), name:"Julia", age: 100},
+];
+
 
 
 export const Select = (props: SelectTypeProps) => {
