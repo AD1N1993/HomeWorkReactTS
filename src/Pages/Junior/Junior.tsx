@@ -6,6 +6,7 @@ import {Select} from "../../common/Select/Select";
 import {RadioButton} from "../../common/RadioButton/RadioButton";
 import {hwReducerType, PersonType} from "../../reducers/hwReducer";
 import {Sort} from "../../components/Sort/ArraySort";
+import {Clock} from "../../common/Clock/Clock";
 
 export type InputSettingsType = {
     id: string
@@ -78,6 +79,9 @@ export function Junior() {
             <RadioButton values={radioState} name={"Drinks"} onChange={onChangeRadioInputStatus}/>
             <h2>Home Task8</h2>
             <Sort  humans={people} sort={sortHumans}/>
+            <h2>Home Task9</h2>
+            <Clock/>
+
         </div>
     );
 }

@@ -1,0 +1,29 @@
+.clockWrapper {
+  padding: 0 50px 50px 50px;
+  &:hover{
+    .date{
+     visibility: visible;
+      left: 0;
+    }
+  }
+}
+
+.date {
+  position: relative;
+  left: -100%;
+ visibility: hidden;
+  background: linear-gradient(green, red);
+  box-shadow: 1px 1px 8px 1px #5b6765;
+  transition:   left 0.9s;
+}
+
+.time {
+  font-size: 20px;
+  color: #0040ff;
+}
+
+.date h1 {
+  color: #000;
+  background: #fff;
+  mix-blend-mode: lighten;
+}
