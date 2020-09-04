@@ -87,6 +87,6 @@ export const sortHumanAC = (payload: "up" | "down"): SortHumanAcType => {
 export const checkHumanAC = (payload: 18): CheckHumanAcType => {
     return {type: CHECK_ARRAY_HUMAN, payload: payload};
 }
-export const showPreloaderAC = (): SetPreloaderAcType => {
+export const setPreloaderAC = (): SetPreloaderAcType => {
     return {type: SET_PRELOADER};
 }

@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import s from "./Junior.module.scss"
 import {EditAbleSpan} from "../../components/EditAbleSpan/EditAbleSpan";
 import {EditAbleSpanLC} from "../../components/EditAbleSpanLC/EditAbleSpan";
 import {Select} from "../../common/Select/Select";
 import {RadioButton} from "../../common/RadioButton/RadioButton";
-import {PersonType, showPreloaderAC} from "../../state/reducers/hwReducer";
+import {PersonType, setPreloaderAC} from "../../state/reducers/hwReducer";
 import {Sort} from "../../components/Sort/ArraySort";
 import {Clock} from "../../common/Clock/Clock";
 import {Preloader} from "../../common/preloader/preloader";
@@ -64,14 +64,14 @@ export function Junior() {
     }
 
     const setPreloader = () => {
-        dispatch(showPreloaderAC())
+        dispatch(setPreloaderAC())
     }
+    useEffect(()=>{
+        if(preloader)  setTimeout(()=>{ setPreloader()},3000);
+    },[preloader]);
 
-    if (preloader) {
-        return <> <Preloader/> <Button value={"Hide Preloader"} action={setPreloader}/></>
-    } else
+    if (preloader) return <Preloader/>
         return (
-
             <div className={s.wrapper}>
                 <h2>Home Task 6</h2>
                 <EditAbleSpan value={inputValue1} onChange={onChangeInputValue1}/>
