@@ -1,29 +1,24 @@
 import React from "react";
 import {Button} from "../../common/Button/Button";
-import {checkHumanAC, hwReducer, hwReducerType, sortHumanAC} from "../../reducers/hwReducer";
+import {checkHumanAC, hwReducer,  PersonType, sortHumanAC} from "../../state/reducers/hwReducer";
 import s from "./ArraySort.module.scss"
+import {useDispatch} from "react-redux";
 
 
 type SortPropsType = {
-    humans: hwReducerType;
-    sort: (sortHumans: hwReducerType) => void
+    humans: Array<PersonType>;
 }
 
 export const Sort = (props: SortPropsType) => {
+    let dispatch = useDispatch();
     const peopleUp = () => {
-        let action = sortHumanAC("up");
-        let sortHumans = hwReducer(props.humans, action);
-        if (sortHumans) props.sort(sortHumans);
+       dispatch(sortHumanAC("up"));
     }
     const peopleDown = () => {
-        let action = sortHumanAC("down");
-        let sortHumans = hwReducer(props.humans, action);
-        if (sortHumans) props.sort(sortHumans);
+       dispatch(sortHumanAC("down"));
     }
     const checkOld = () => {
-        let action = checkHumanAC(18);
-        let sortHumans = hwReducer(props.humans, action);
-        if (sortHumans) props.sort(sortHumans);
+       dispatch(checkHumanAC(18));
     }
     return (
         <div className={s.wrapper}>
