@@ -1,12 +1,17 @@
+import {hwApi} from "../../api/RequestsAPI";
+import {Dispatch, useEffect} from "react";
+
 const SET_PRELOADER = "SET_PRELOADER";
 const SORT_ARRAY_HUMAN = "SORT_ARRAY_HUMAN";
 const CHECK_ARRAY_HUMAN = "CHECK_ARRAY_HUMAN";
+const SET_ERRORS = "SET_ERRORS";
 
 
 export type PersonType = { id: string, name: string, age: number }
 export type hwReducerType = {
     person: Array<PersonType>
     loading: boolean
+    error: string | null
 }
 
 type SortHumanAcType = {
@@ -21,7 +26,7 @@ type SetPreloaderAcType = {
     type: "SET_PRELOADER";
 }
 
-type ActionsType = SortHumanAcType | CheckHumanAcType | SetPreloaderAcType
+type ActionsType = SortHumanAcType | CheckHumanAcType | SetPreloaderAcType | ReturnType<typeof setErrorAC>
 
 let initialState: hwReducerType = {
     person: [
@@ -33,7 +38,8 @@ let initialState: hwReducerType = {
         {id: '6', name: "Helen", age: 12},
         {id: '7', name: "Julia", age: 100}
     ],
-    loading: false
+    loading: false,
+    error: null
 }
 
 export const hwReducer = (state: hwReducerType = initialState, action: ActionsType): hwReducerType => {
@@ -74,6 +80,10 @@ export const hwReducer = (state: hwReducerType = initialState, action: ActionsTy
             return {
                 ...state, loading: !state.loading
             }
+        case SET_ERRORS:
+            return {
+                ...state, error: action.errorMessage
+            }
         default:
             return state;
     }
@@ -89,4 +99,25 @@ export const checkHumanAC = (payload: 18): CheckHumanAcType => {
 }
 export const setPreloaderAC = (): SetPreloaderAcType => {
     return {type: SET_PRELOADER};
+}
+export const setErrorAC = (errorMessage: string) => ({type: SET_ERRORS, errorMessage} as const)
+
+
+export const setSuccessTC = (success: boolean) => {
+
+    return (dispatch: Dispatch<ActionsType>) => {
+        dispatch(setPreloaderAC())
+        hwApi.sendValue(success)
+            .then((res) => {
+                dispatch(setErrorAC(res.data.errorText))
+
+            })
+            .catch(res => {
+                dispatch(setErrorAC("ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)"))
+            })
+            .finally(() => {
+                dispatch(setPreloaderAC())
+            })
+    }
+
 }

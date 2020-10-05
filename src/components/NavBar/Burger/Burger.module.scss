@@ -55,3 +55,23 @@
     background-color: #ffffff;
   }
 }
+.black.item{
+  background-color: white;
+  &::after {
+
+    background-color: white;
+  }&::before {
+
+    background-color: white;
+  }
+}
+.white.item{
+  background-color: black;
+  &::after {
+
+    background-color: black;
+  }&::before {
+
+     background-color: black;
+   }
+}
