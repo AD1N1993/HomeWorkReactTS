@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {ReactNode, useEffect, useState} from "react";
 import s from "./Junior.module.scss"
 import {EditAbleSpan} from "../../components/EditAbleSpan/EditAbleSpan";
 import {EditAbleSpanLC} from "../../components/EditAbleSpanLC/EditAbleSpan";
@@ -11,6 +11,8 @@ import {Preloader} from "../../common/preloader/preloader";
 import {Button} from "../../common/Button/Button";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../state/store";
+import  {Range} from 'rc-slider';
+import 'rc-slider/assets/index.css';
 
 export type InputSettingsType = {
     id: string
@@ -41,6 +43,8 @@ export function Junior() {
 
     let [selectValue, setSelectValue] = useState("Choice...");
 
+    let [value, setValue] = useState<Array<number>>([0,10000])
+
     const onChangeInputValue1 = (newInputValue: string) => {
         setInputValue1(newInputValue)
     }
@@ -66,26 +70,40 @@ export function Junior() {
     const setPreloader = () => {
         dispatch(setPreloaderAC())
     }
-    useEffect(()=>{
-        if(preloader)  setTimeout(()=>{ setPreloader()},3000);
-    },[preloader]);
+    useEffect(() => {
+        if (preloader) setTimeout(() => {
+            setPreloader()
+        }, 3000);
+    }, [preloader]);
 
     if (preloader) return <Preloader/>
-        return (
-            <div className={s.wrapper}>
-                <h2>Home Task 6</h2>
-                <EditAbleSpan value={inputValue1} onChange={onChangeInputValue1}/>
-                <h4>Home Task 6 with *</h4>
-                <EditAbleSpanLC value={inputValue2} onChange={onChangeInputValue2}/>
-                <h2>Home Task7</h2>
-                <Select value={selectValue} options={optionsValue} onChange={onChangeSelectOption}/>
-                <RadioButton values={radioState} name={"Drinks"} onChange={onChangeRadioInputStatus}/>
-                <h2>Home Task8</h2>
-                <Sort humans={people}/>
-                <h2>Home Task9</h2>
-                <Clock/>
-                <h2>Home Task10</h2>
-                <Button value={"Show Preloader"} action={setPreloader}/>
+
+    let onRangeValue = (value: number[]) => {
+        setValue(value)
+    }
+    return (
+        <div className={s.wrapper}>
+            <h2>Home Task 6</h2>
+            <EditAbleSpan value={inputValue1} onChange={onChangeInputValue1}/>
+            <h4>Home Task 6 with *</h4>
+            <EditAbleSpanLC value={inputValue2} onChange={onChangeInputValue2}/>
+            <h2>Home Task7</h2>
+            <Select value={selectValue} options={optionsValue} onChange={onChangeSelectOption}/>
+            <RadioButton values={radioState} name={"Drinks"} onChange={onChangeRadioInputStatus}/>
+            <h2>Home Task8</h2>
+            <Sort humans={people}/>
+            <h2>Home Task9</h2>
+            <Clock/>
+            <h2>Home Task10</h2>
+            <Button value={"Show Preloader"} action={setPreloader}/>
+            <h2>Home Task11</h2>
+            <div className={s.range}>
+                Price
+                <span> from: {value[0]}</span>
+                <span> to: {value[1]}</span>
+                <Range min={0} max={10000} step={1} dots={false} defaultValue={value} onChange={onRangeValue}
+                       pushable={true}/>
             </div>
-        );
+        </div>
+    );
 }
