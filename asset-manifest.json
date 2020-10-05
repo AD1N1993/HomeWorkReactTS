@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/HomeWorkReactTS/static/css/main.1250a16b.chunk.css",
-    "main.js": "/HomeWorkReactTS/static/js/main.285ccad7.chunk.js",
-    "main.js.map": "/HomeWorkReactTS/static/js/main.285ccad7.chunk.js.map",
+    "main.css": "/HomeWorkReactTS/static/css/main.6415f6ad.chunk.css",
+    "main.js": "/HomeWorkReactTS/static/js/main.8bb7c852.chunk.js",
+    "main.js.map": "/HomeWorkReactTS/static/js/main.8bb7c852.chunk.js.map",
     "runtime-main.js": "/HomeWorkReactTS/static/js/runtime-main.3b30a983.js",
     "runtime-main.js.map": "/HomeWorkReactTS/static/js/runtime-main.3b30a983.js.map",
-    "static/js/2.9b10cdc4.chunk.js": "/HomeWorkReactTS/static/js/2.9b10cdc4.chunk.js",
-    "static/js/2.9b10cdc4.chunk.js.map": "/HomeWorkReactTS/static/js/2.9b10cdc4.chunk.js.map",
+    "static/css/2.bc6e0cf5.chunk.css": "/HomeWorkReactTS/static/css/2.bc6e0cf5.chunk.css",
+    "static/js/2.23c6d164.chunk.js": "/HomeWorkReactTS/static/js/2.23c6d164.chunk.js",
+    "static/js/2.23c6d164.chunk.js.map": "/HomeWorkReactTS/static/js/2.23c6d164.chunk.js.map",
     "index.html": "/HomeWorkReactTS/index.html",
-    "precache-manifest.dc6de0619a3fd1d40a1c51f9b87976d7.js": "/HomeWorkReactTS/precache-manifest.dc6de0619a3fd1d40a1c51f9b87976d7.js",
+    "precache-manifest.6d2dd4fa91947764d85883966e29f9aa.js": "/HomeWorkReactTS/precache-manifest.6d2dd4fa91947764d85883966e29f9aa.js",
     "service-worker.js": "/HomeWorkReactTS/service-worker.js",
-    "static/css/main.1250a16b.chunk.css.map": "/HomeWorkReactTS/static/css/main.1250a16b.chunk.css.map",
-    "static/js/2.9b10cdc4.chunk.js.LICENSE.txt": "/HomeWorkReactTS/static/js/2.9b10cdc4.chunk.js.LICENSE.txt",
+    "static/css/2.bc6e0cf5.chunk.css.map": "/HomeWorkReactTS/static/css/2.bc6e0cf5.chunk.css.map",
+    "static/css/main.6415f6ad.chunk.css.map": "/HomeWorkReactTS/static/css/main.6415f6ad.chunk.css.map",
+    "static/js/2.23c6d164.chunk.js.LICENSE.txt": "/HomeWorkReactTS/static/js/2.23c6d164.chunk.js.LICENSE.txt",
     "static/media/preloader.gif": "/HomeWorkReactTS/static/media/preloader.32a50f1c.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.3b30a983.js",
-    "static/js/2.9b10cdc4.chunk.js",
-    "static/css/main.1250a16b.chunk.css",
-    "static/js/main.285ccad7.chunk.js"
+    "static/css/2.bc6e0cf5.chunk.css",
+    "static/js/2.23c6d164.chunk.js",
+    "static/css/main.6415f6ad.chunk.css",
+    "static/js/main.8bb7c852.chunk.js"
   ]
 }
